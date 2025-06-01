@@ -1,5 +1,5 @@
 
-//method 1 - define and create one node with values
+//method 1 - define and point head node with values
 //using constructor to initialize(better)
 #include <iostream>
 using namespace std;
