@@ -54,10 +54,11 @@ void position(Node*& head, int val, int pos){
 	if(pos==1){
 		temp->next=head;
 		head=temp;
+		return;
 	}
 	
 	Node* temp1=head;
-	for(int i=1;i<pos-1 && temp!=NULL; i++){
+	for(int i=1;i<pos-1 && temp1!=NULL; i++){
 		temp1=temp1->next;
 	}
 	
