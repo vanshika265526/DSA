@@ -29,3 +29,32 @@ class Solution {
         return res;
     }
 };
+
+
+//NEXT SMALLER ELEMENT
+#include <iostream>
+#include <vector>
+#include <stack>
+using namespace std;
+
+vector<int> nextSmallerElement(vector<int>& arr, int n) {
+ 
+    vector<int> res(n,-1);
+    stack<int> st;  // Stack to keep potential next smaller elements
+
+    for (int i = n - 1; i >= 0; i--) {
+        // Remove all elements that are not smaller
+        while (!st.empty() && st.top() >= arr[i]) {
+            st.pop();
+        }
+
+        // If stack is empty, no smaller element to the right
+        res[i] = st.empty() ? -1 : st.top();
+
+        // Push current element for future comparisons
+        st.push(arr[i]);
+    }
+
+    return res;
+}
+
